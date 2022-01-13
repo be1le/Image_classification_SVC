@@ -1,0 +1,209 @@
+#green-btn {
+    background-color: rgb(27, 126, 27);
+
+    border: 1px solid rgb(27, 126, 27);
+    border-radius: 0.3vw;
+    color: white;
+
+    width: 8rem;
+    height: 2rem;
+
+    cursor: pointer;
+}
+
+#red-btn {
+    background-color: rgb(126, 27, 27);
+    border: 1px solid rgb(126, 27, 27);
+    border-radius: 0.3vw;
+    color: white;
+
+    width: 8rem;
+    height: 2rem;
+
+    cursor: pointer;
+}
+
+#red-btn:hover {
+    background-color: rgb(59, 0, 0);
+    border: 1px solid rgb(126, 27, 27);
+    font-weight: bold;
+    transition-duration: 0.6s;
+}
+
+#green-btn:hover {
+    background-color: rgb(0, 63, 0);
+    border: 1px solid rgb(27, 126, 27);
+    font-weight: bold;
+    transition-duration: 0.6s;
+}
+
+#font-color {
+    color: white;
+}
+
+body {
+    background-color: rgb(31, 31, 31);
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*              HEADER 시작              */
+
+header {
+    margin: 2% 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 800px;
+    cursor: pointer;
+}
+
+header #header-box {
+    display: flex;
+    flex-direction: column;
+}
+
+#header-box {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header-box .title {
+    font-size: 35px;
+    margin-bottom: 3%;
+}
+
+/*      HEADER  끝      MAIN 시작      */
+
+#result p {
+    font-size: 1.4rem;
+    color: white;
+}
+
+#loading {
+    display: none;
+}
+
+/* drop area */
+main {
+    width: 100%;
+}
+#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 3%;
+}
+#img-box {
+    background-image: url(../img/Full_Image/alisa_Full.png);
+    background-size: 400px;
+    background-position: center;
+
+    width: 500px;
+    height: 800px;
+
+    margin-left: 5%;
+    background-repeat: no-repeat;
+}
+
+#explain-box {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 30%;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+Display:ital,wght@1,100&family=Noto+Sans+KR:wght@300&display=swap");
+
+#explain-box #exp-title {
+    font-size: 40px;
+    font-family: "Yeon Sung", cursive;
+
+    color: rgb(255, 117, 117);
+    margin-top: -10%;
+}
+
+#explain-box #exp-short {
+    font-size: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: rgb(117, 255, 170);
+
+    margin-top: -5%;
+}
+
+/*       승률 부분 시작        */
+#lower-container {
+    width: 70%;
+    align-items: center;
+    margin: 0 auto;
+}
+#lower-container #winning-title {
+    font-size: 40px;
+    font-family: "Yeon Sung", cursive;
+
+    color: rgb(255, 117, 117);
+    margin-top: -0.5%;
+}
+
+/*      MAIN  끝      FOOTER 시작      */
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-size: small;
+}
+
+/*             FOOTER  끝             */
+
+/* 드래그앤드랍 */
+/* .dropArea img {
+    position: absolute;
+    transform: translate(50, 50);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+}
+.dropArea:hover {
+    cursor: pointer;
+}
+.dropArea.over {
+    background-color: rgb(59, 0, 0);
+    border: 2px solid rgb(126, 27, 27);
+}
+
+.dropArea.over:hover {
+    transition-duration: 0.6s;
+}
+
+.dropArea.drop {
+    position: relative;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    display: block;
+    align-items: center;
+    overflow: hidden;
+} */

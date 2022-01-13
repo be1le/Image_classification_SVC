@@ -24,9 +24,8 @@ def DeleteAllFiles(Path):
 @bp.route('/')
 def home():
     
-    user = db.char.find_one({'name':'Jin'})
 
-    return render_template('index.html', name = user['name'] , Winrate = user['Winrate'])
+    return render_template('main.html')
 
 
 

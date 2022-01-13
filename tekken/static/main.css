@@ -43,7 +43,7 @@
 
 body {
     background-color: rgb(31, 31, 31);
-    background-image: url(../img/철권5.png);
+    background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/background.png);
     background-position-x: 130%;
     background-position-y: -35%;
     background-size: 1100px;

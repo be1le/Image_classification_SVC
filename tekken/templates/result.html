@@ -1,25 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        {{ result }}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <title>테스트 결과</title>
+        <link rel="stylesheet" href="../static/detail.css">
+        <script defer src="../static/main.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+        </head>
+    <body>  
+    <div id="container">
+        <header>
+            <img src="../img/tekken7.png">
+            <div id = "header-box">
+                <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
+                <div>
+                <button id="green-btn" class="btn">닮은꼴 TOP3 캐릭터</button>  
+                <button id="green-btn" class="btn">캐릭터 스토리</button>
+                <button id="green-btn" class="btn">캐릭터 승률</button>  
+                </div>   
+            </div>
+        </header>
+        <div class="users" id="font-color">지금까지 ${}명이 테스트했습니다.</div>
+        <main>     
+            <div id="result">
+                <div id="img-box">
+                </div>  
+                <div id="explain-box">
+                    <p id="exp-title">당신은 철권7 캐릭터 중 <span>${}</span>와 닮았습니다.</p>
+                    <p id="exp-short">화려하지만 감정을 느낄 수 없는 인위적인 외모. 미소는 입으로만.</p>
+                    <p id="exp-profile">** 캐릭터 이미지를 클릭하시면 캐릭터 스토리를 볼 수 있습니다. **</p>
+                </div>
+            </div> 
+        </main>         
+    </div>
+    <hr style="width:70%;height:3px;border:none;background-color:rgb(126, 27, 27);">
+    <div id="lower-container">
+        <p id="ranking-title">닮은꼴 TOP3 캐릭터</p>
+        <p id="ranking-exp">닮은꼴이 많은 캐릭터 상위 3명은 다음과 같습니다.</p>
+        <div id="lower-box">
+            <div id="ranking-box">
+                <div id="rank-box">
+                    <div id='rank-level'>TOP1</div>
+                    <div id="rank1"></div>
+                    <p id="rank-name1" class="rank-name">앨리사</p>
+                    <p id="rank1-per" class="per">${}%</p>
+                </div>
+                <div id="rank-box">
+                    <div id='rank-level'>TOP2</div>
+                    <div id="rank2"></div>
+                    <p id="rank-name2" class="rank-name">드라그노프</p>
+                    <p id="rank2-per" class="per">${}%</p>
+                </div>
+                <div id="rank-box">
+                    <div id='rank-level'>TOP3</div>
+                    <div id="rank3"></div>
+                    <p id="rank-name3" class="rank-name">리리</p>
+                    <p id="rank-per" class="per">${}%</p>
+                </div>   
+            </div>
+            <button class="home-btn">홈으로 가기</button>
+        </div>
+        </div>
+    </div>
+    <footer>
+        <p id="font-color">Copyright 2022. BlueClub inc. all rights reserved.</p>
+    </footer>
     </body>
 </html>
-=======
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{ result }}
-</body>
-</html>
->>>>>>> 5be098fdf3ec7f06d2cbdaf4bcdd98a289b607c3

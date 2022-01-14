@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-        <title>캐릭터 스토리</title>
-        <link rel="stylesheet" href="../static/info.css">
-        <script defer src="../static/main.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Yeon+Sung&display=swap" rel="stylesheet">
-        </head>
-    <body>  
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <title>캐릭터 스토리</title>
+    <link rel="stylesheet" href="../static/info.css">
+    <script defer src="../static/main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Yeon+Sung&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
     <div id="container">
         <header>
-            <img src="../img/tekken7.png">
-            <div id = "header-box">
+            <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/tekken7.png" onclick="home()">
+            <div id="header-box">
                 <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
                 <div>
-                <button id="green-btn" class="btn">닮은꼴 TOP3 캐릭터</button>  
-                <button id="green-btn" class="btn">캐릭터 스토리</button>
-                <button id="green-btn" class="btn">캐릭터 승률</button>  
-                </div>   
+                    <button id="green-btn" class="btn">닮은꼴 TOP3 캐릭터</button>
+                    <button id="green-btn" class="btn">캐릭터 스토리</button>
+                    <button id="green-btn" class="btn">aaa캐릭터 승률</button>
+                </div>
             </div>
         </header>
         <div class="users" id="font-color">지금까지 ${}명이 테스트했습니다.</div>
-        <main>     
-            <div id="result">  
+        <main>
+            <div id="result">
                 <div id="explain-box">
-                    <p id="exp-title">${캐릭터 이름}</p>
+                    <p id="exp-title">{{name}}</p>
                     <p id="exp-short">Alisa Bosconovitch는 Bosconovitch 박사가 첨단 군사기술로 만들어냈습니다.
                         Alisa는 매우 민첩하고 빠른 캐릭터입니다. 그녀의 이동성과 좋은 범위는 Alisa를 현명한 위치 지정과 신중한 플레이어에게 보상하는 훌륭한 찌르기 캐릭터입니다.
                         Alisa의 독특한 기능 중 하나는 두 팔이 전기톱으로 변하는 자세로 전환할 수 있다는 것입니다.</p>
                 </div>
                 <div id="img-box">
                 </div>
-            </div> 
-        </main>         
+            </div>
+        </main>
     </div>
     <hr style="width:70%;height:3px;border:none;background-color:rgb(126, 27, 27);">
     <div id="lower-container">
         <p id="winning-title">캐릭터 승률</p>
         <div id="winning-box">
-                sadfsadfsadfasdfasdf
+            sadfsadfsadfasdfasdf
         </div>
     </div>
     <footer>
         <p id="font-color">Copyright 2022. BlueClub inc. all rights reserved.</p>
     </footer>
-    </body>
+</body>
+
 </html>

@@ -43,7 +43,7 @@
 
 body {
     background-color: rgb(31, 31, 31);
-    background-image: url(../img/철권5.png);
+    background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/background.png);
     background-position-x: 130%;
     background-position-y: -35%;
     background-size: 1100px;
@@ -180,3 +180,45 @@ footer p {
     align-items: center;
     overflow: hidden;
 } */
+
+#capture {
+        background-color: rgb(126, 27, 27);
+        border: 1px solid rgb(126, 27, 27);
+        border-radius: 0.3vw;
+        color: white;
+    
+        width: 8rem;
+        height: 2rem;
+    
+        cursor: pointer;
+    
+}
+#re_capture {
+    background-color: rgb(126, 27, 27);
+    border: 1px solid rgb(126, 27, 27);
+    border-radius: 0.3vw;
+    color: white;
+
+    width: 8rem;
+    height: 2rem;
+
+    cursor: pointer;
+
+}
+#show_result {
+    background-color: rgb(126, 27, 27);
+    border: 1px solid rgb(126, 27, 27);
+    border-radius: 0.3vw;
+    color: white;
+
+    width: 8rem;
+    height: 2rem;
+
+    cursor: pointer;
+
+}
+
+#camera {
+    width: 100%;
+    height: 100%;
+}

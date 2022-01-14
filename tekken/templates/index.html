@@ -7,42 +7,62 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Document</title>
 </head>
+<style>
+  #container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+  }
+
+  #videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+  }
+</style>
+
 <script>
-  function posting() {
-    let file = $('#file')[0].files[0]
-    let form_data = new FormData()
-
-    form_data.append("file_give", file)
-
-    $.ajax({
-        type: "POST",
-        url: "/fileupload",
-        data: form_data,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function (response) {
-            alert(response["result"])
-            // 아래처럼 하지 않아도, 백엔드(app.py)에서 바로 판별 함수를 실행한 뒤에
-            // render_template 을 해서 바로 결과 페이지로 넘어가도 됨
-            window.location.href='/result'
-        }
-    });
-  }
-
-  function preview() {
-    let frame = $('#frame');
-    frame.src=URL.createObjectURL(event.target.files[0]);
-    frame.style.display = 'block';
-  }
+  
 
 </script>
+
 <body>
-  <div class="file-upload">
-    <img style="display: none;" id="frame" src="" width="300px"/>
+    <div class="file-upload">
+    <img style="display: none;" id="frame" src="" width="300px" />
     <input type="file" id="file" onchange="preview()">
-    <button onclick="posting()">고양이일까? 강아지일까?</button>
-    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/Devil_Jin_Full.png">
-  </div>
+
+
+    <video id="camera"autoplay></video>
+    <button id="capture">Capture</button> 
+    <canvas id="canvas" width=320 height=240></canvas> <<<<<< 얘ㅋ
+    <script>
+      const player = document.getElementById('player');
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+      const captureButton = document.getElementById('capture');
+    
+      const constraints = {
+        video: true,
+      };
+    
+      captureButton.addEventListener('click', () => {
+        // Draw the video frame to the canvas.
+        context.drawImage(player, 0, 0, canvas.width, canvas.height);
+      });
+    
+      // Attach the video stream to the video element and autoplay.
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then((stream) => {
+          player.srcObject = stream;
+        });
+    </script>
+    <button onclick="posting2()">123?</button>
+    <button onclick="posting()">123?</button>
+    {{name}}
+    {{Winrate}}
+
+
 </body>
+
 </html>

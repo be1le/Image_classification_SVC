@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, redirect, url_for, jsonify,Blueprint
 from datetime import datetime
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -34,3 +35,4 @@ def home():
 
 
     return render_template('characters.html', a_char = first, b_char = sec, c_char = thd, d_char = four , e_char = five)
+

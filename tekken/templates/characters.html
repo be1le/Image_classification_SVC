@@ -30,16 +30,16 @@
                 {% set name = i.name %}
                     <div class="char-btn">
                     <p class="text">{{name}}</p>
-                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png">
-                    </div>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png"  alt = '{{name}}' onclick="load_detail(this.alt)" >
+                </div>
                 {% endfor %}
             </div>
             <div id="character-r">
                 {% for i in b_char %}
                 {% set name = i.name %}
-                    <div class="char-btn">
-                    <p class="text">{{name}}</p>
-                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png">
+                    <div class="char-btn" >
+                    <p class="text" >{{name}}</p>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png"  alt = '{{name}}' onclick="load_detail(this.alt)" >
                     </div>
                 {% endfor %}
 
@@ -49,8 +49,8 @@
                 {% set name = i.name %}
                     <div class="char-btn">
                     <p class="text">{{name}}</p>
-                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png">
-                    </div>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png"  alt = '{{name}}' onclick="load_detail(this.alt)" >
+                </div>
                 {% endfor %}
             </div>
             <div id="character-r">
@@ -58,8 +58,8 @@
                 {% set name = i.name %}
                     <div class="char-btn">
                     <p class="text">{{name}}</p>
-                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png">
-                    </div>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png"  alt = '{{name}}' onclick="load_detail(this.alt)" >
+                </div>
                 {% endfor %}
             </div> 
             <div id="character-last">
@@ -67,8 +67,8 @@
                 {% set name = i.name %}
                     <div class="char-btn">
                     <p class="text">{{name}}</p>
-                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png">
-                    </div>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png"  alt = '{{name}}' onclick="load_detail(this.alt)" >
+                </div>
                 {% endfor %}
             </div>
           

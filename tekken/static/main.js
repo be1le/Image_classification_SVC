@@ -165,3 +165,9 @@ navigator.mediaDevices.getUserMedia(constraints)
     .then((stream) => {
         camera.srcObject = stream;
     });
+
+function load_detail(value) {
+    let name = value
+    window.location.href='/char_detail/'+name
+
+}

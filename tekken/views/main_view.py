@@ -183,4 +183,4 @@ def result():
     
     db.compared_face_result.insert_one(doc)
     
-    return render_template('result.html', result=result)
+    return redirect(url_for('char_result.home', result=result))

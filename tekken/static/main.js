@@ -2,14 +2,14 @@
 
 
 function cameraOn() {
-    document.getElementById("camera").style.display = "block";
-    document.getElementById("capture").style.display = "block"
-    document.getElementById("boxtext").style.display = "None"
-    document.getElementById("red-btn").style.display = "None"
-    document.getElementById("canvas").style.display = "None"
-    
-    var canvas = document.getElementById("canvas")
-    canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+  document.getElementById("camera").style.display = "block";
+  document.getElementById("capture").style.display = "block"
+  document.getElementById("boxtext").style.display = "None"
+  document.getElementById("red-btn").style.display = "None"
+  document.getElementById("canvas").style.display = "None"
+
+  var canvas = document.getElementById("canvas")
+  canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
 }
 
 // $(document).ready(function(){ 
@@ -31,59 +31,59 @@ function cameraOn() {
 $('.dropArea')
   .on("dragover", dragOver)
 
-  function dragOver(e){
-    e.stopPropagation();
-    e.preventDefault();
-    if (e.type == "dragover") {  
-        $('.dorpArea p').hide(); 
-    }  
+function dragOver(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  if (e.type == "dragover") {
+    $('.dorpArea p').hide();
   }
+}
 
 const dropArea = document.querySelector('.dropArea')
 dropArea.addEventListener('dragover', (e) => {
-    e.preventDefault()
-    e.target.classList.add('over')
-    
+  e.preventDefault()
+  e.target.classList.add('over')
+
 })
 dropArea.addEventListener('dragleave', (e) => {
-    e.target.classList.remove('over')
+  e.target.classList.remove('over')
 
-    
+
 })
 dropArea.addEventListener('drop', (e) => {
-    e.preventDefault()
-    e.target.classList.add('drop')
-    let file = e.dataTransfer.files[0]
-    let fileReader = new FileReader()
-    fileReader.onload = (result) => {
-        let img = "<img src='" + result.target.result + "' />"
-        dropArea.innerHTML = img
-    }
-    fileReader.readAsDataURL(file)
+  e.preventDefault()
+  e.target.classList.add('drop')
+  let file = e.dataTransfer.files[0]
+  let fileReader = new FileReader()
+  fileReader.onload = (result) => {
+    let img = "<img src='" + result.target.result + "' />"
+    dropArea.innerHTML = img
+  }
+  fileReader.readAsDataURL(file)
 })
 
 
 function posting2() {
-    let file = $('#file')[0].files[0]
-    let form_data = new FormData()
+  let file = $('#file')[0].files[0]
+  let form_data = new FormData()
 
-    form_data.append("file_give", file)
+  form_data.append("file_give", file)
 
-    $.ajax({
-        type: "POST",
-        url: "/fileupload",
-        data: form_data,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function (response) {
-            alert(response["result"])
-            // 아래처럼 하지 않아도, 백엔드(app.py)에서 바로 판별 함수를 실행한 뒤에
-            // render_template 을 해서 바로 결과 페이지로 넘어가도 됨
-            window.location.href='/result'
-        }
-    });
-  }
+  $.ajax({
+    type: "POST",
+    url: "/fileupload",
+    data: form_data,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (response) {
+      alert(response["result"])
+      // 아래처럼 하지 않아도, 백엔드(app.py)에서 바로 판별 함수를 실행한 뒤에
+      // render_template 을 해서 바로 결과 페이지로 넘어가도 됨
+      window.location.href = '/result'
+    }
+  });
+}
 
 
 
@@ -94,30 +94,30 @@ function posting() {
   const decodImg = atob(imgBase64.split(',')[1]);
 
   let array = [];
-  for (let i = 0; i < decodImg .length; i++) {
-    array.push(decodImg .charCodeAt(i));
+  for (let i = 0; i < decodImg.length; i++) {
+    array.push(decodImg.charCodeAt(i));
   }
 
-  const file = new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
+  const file = new Blob([new Uint8Array(array)], { type: 'image/jpeg' });
   const fileName = 'canvas_img_' + new Date().getMilliseconds() + '.jpg';
   let formData = new FormData();
   formData.append('file_give', file, fileName);
 
-    $.ajax({
-      type: "POST",
-      url: "/fileupload",
-      data: formData,
-      cache: false,
-      contentType: false,
-      processData: false,
-      success: function (response) {
-        alert(response["result"])
-        // 아래처럼 하지 않아도, 백엔드(app.py)에서 바로 판별 함수를 실행한 뒤에
-        // render_template 을 해서 바로 결과 페이지로 넘어가도 됨
-        window.location.href = '/result'
-      }
-    });
-  }
+  $.ajax({
+    type: "POST",
+    url: "/fileupload",
+    data: formData,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (response) {
+      alert(response["result"])
+      // 아래처럼 하지 않아도, 백엔드(app.py)에서 바로 판별 함수를 실행한 뒤에
+      // render_template 을 해서 바로 결과 페이지로 넘어가도 됨
+      window.location.href = '/result'
+    }
+  });
+}
 
 function reset() {
   var canvas = document.getElementById("canvas");
@@ -152,22 +152,55 @@ const context = canvas.getContext('2d');
 const captureButton = document.getElementById('capture');
 
 const constraints = {
-    video: true,
+  video: true,
 };
 
 captureButton.addEventListener('click', () => {
-    // Draw the video frame to the canvas.
-    context.drawImage(camera, 0, 0, canvas.width, canvas.height);
+  // Draw the video frame to the canvas.
+  context.drawImage(camera, 0, 0, canvas.width, canvas.height);
 });
 
 // Attach the video stream to the video element and autoplay.
 navigator.mediaDevices.getUserMedia(constraints)
-    .then((stream) => {
-        camera.srcObject = stream;
-    });
+  .then((stream) => {
+    camera.srcObject = stream;
+  });
 
 function load_detail(value) {
-    let name = value
-    window.location.href='/char_detail/'+name
+  let name = value
+  window.location.href = '/char_detail/' + name
 
 }
+
+// // 카카오톡 공유하기
+// var shareLink = 'localhost:5000/char_result';
+
+// Kakao.Link.createDefaultButton({
+//   container: '#kakaoShare',
+//   objectType: 'feed',
+//   content: {
+//     title: '나랑 닮은 철권7 캐릭터',
+//     description: '{{name}}',
+//     imageUrl: 'https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/{{name}}.png',
+//     link: {
+//       webUrl: localhost:5000,
+//       mobileWebUrl: localhost:5000
+//     },
+//   },
+//   buttons: [
+//     {
+//       title: '웹으로 보기',
+//       link: {
+//         webUrl: shareLink,
+//         mobileWebUrl: shareLink
+//       }
+//     },
+//     {
+//       title: '앱으로 보기',
+//       link: {
+//         webUrl: shareLink,
+//         mobileWebUrl: shareLink
+//       }
+//     }
+//   ]
+// });

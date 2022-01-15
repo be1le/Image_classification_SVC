@@ -112,7 +112,6 @@ main {
 }
 
 #img-box {
-    background-image: url(../img/Face_Image/alisa.png);
     background-size: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -215,7 +214,7 @@ main {
 }
 
 #ranking-box #rank1 {
-    background-image: url(../img/Face_Image/alisa.png);
+    
     background-size: 300px;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,7 +227,7 @@ main {
 }
 
 #ranking-box #rank2 {
-    background-image: url(../img/Face_Image/dragunov.png);
+    
     background-size: 225px;
     background-position: center;
     background-repeat: no-repeat;
@@ -241,7 +240,7 @@ main {
 }
 
 #ranking-box #rank3 {
-    background-image: url(../img/Face_Image/lili.png);
+    
     background-size: 150px;
     background-position: center;
     background-repeat: no-repeat;

@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <title>테스트 결과</title>
-    <link rel="stylesheet" href="../static/detail.css">
+    <link rel="stylesheet" href="../static/result.css">
     <script defer src="../static/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,25 +18,28 @@
 <body>
     <div id="container">
         <header>
-            <img src="../img/tekken7.png">
+            <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/tekken7.png" onclick="home()">
             <div id="header-box">
                 <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
                 <div>
-                    <button id="green-btn" class="btn">닮은꼴 TOP3 캐릭터</button>
-                    <button id="green-btn" class="btn">캐릭터 스토리</button>
-                    <button id="green-btn" class="btn">캐릭터 승률</button>
+                    <button id="green-btn" class="btn"
+                        onclick="$( 'html, body' ).stop().animate( { scrollTop : '1100' } )">닮은꼴 TOP3 캐릭터</button>
+                    <button id="green-btn" class="btn" onclick="all_char()">캐릭터 스토리</button>
+                    <button id="green-btn" class="btn" onclick="all_char()">캐릭터 승률</button>
                 </div>
             </div>
         </header>
-        <div class="users" id="font-color">지금까지 ${}명이 테스트했습니다.</div>
+        <div class="users" id="font-color">지금까지 {{all_result}}명이 테스트했습니다.</div>
         <main>
             <div id="result">
-                <div id="img-box">
+                <div id="img-box"
+                    style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png)"
+                    onclick="home()">
                 </div>
                 <div id="explain-box">
-                    <p id="exp-title">당신은 철권7 캐릭터 중 <span>${}</span>와 닮았습니다.</p>
-                    <p id="exp-short">화려하지만 감정을 느낄 수 없는 인위적인 외모. 미소는 입으로만.</p>
-                    <p id="exp-profile">** 캐릭터 이미지를 클릭하시면 캐릭터 스토리를 볼 수 있습니다. **</p>
+                    <p id="exp-title">당신은 철권7 캐릭터 중 <span>{{name}}</span>와 닮았습니다.</p>
+                    <p id="exp-short">{{face}}</p>
+                    <p id="exp-profile">** 캐릭터 이미지를 클릭하시면 테스트 페이지로 돌아갑니다. **</p>
                 </div>
             </div>
         </main>
@@ -49,24 +52,30 @@
             <div id="ranking-box">
                 <div id="rank-box">
                     <div id='rank-level'>TOP1</div>
-                    <div id="rank1"></div>
-                    <p id="rank-name1" class="rank-name">앨리사</p>
-                    <p id="rank1-per" class="per">${}%</p>
+                    <div id="rank1"
+                        style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{first}}.png)">
+                    </div>
+                    <p id="rank-name1" class="rank-name">{{first}}</p>
+                    <p id="rank1-per" class="per">{{first_num}}%</p>
                 </div>
                 <div id="rank-box">
                     <div id='rank-level'>TOP2</div>
-                    <div id="rank2"></div>
-                    <p id="rank-name2" class="rank-name">드라그노프</p>
-                    <p id="rank2-per" class="per">${}%</p>
+                    <div id="rank2"
+                        style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{sec}}.png)">
+                    </div>
+                    <p id="rank-name2" class="rank-name">{{sec}}</p>
+                    <p id="rank2-per" class="per">{{sec_num}}%</p>
                 </div>
                 <div id="rank-box">
                     <div id='rank-level'>TOP3</div>
-                    <div id="rank3"></div>
-                    <p id="rank-name3" class="rank-name">리리</p>
-                    <p id="rank-per" class="per">${}%</p>
+                    <div id="rank3"
+                        style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{thd}}.png);">
+                    </div>
+                    <p id="rank-name3" class="rank-name">{{thd}}</p>
+                    <p id="rank-per" class="per">{{thd_num}}%</p>
                 </div>
             </div>
-            <button class="home-btn">홈으로 가기</button>
+            <button class="home-btn" onclick="home()">홈으로 가기</button>
         </div>
     </div>
     </div>

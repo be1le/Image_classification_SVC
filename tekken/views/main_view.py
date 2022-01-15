@@ -23,9 +23,10 @@ def DeleteAllFiles(Path):
 
 @bp.route('/')
 def home():
+    result= len(list(db.compared_face_result.find({},{'_id':False})))
     
 
-    return render_template('main.html')
+    return render_template('main.html', all_result = result)
 
 
 
@@ -62,15 +63,111 @@ def result():
     pred = model.predict(test_generator)
     # 마지막으로 업로드한 사진에 대한 판별결과를 보여줌
     # 이 부분은 어떤 서비스를 만들고자 하는지에 따라서 얼마든지 달라질 수 있음
-
     for i in pred:
         ab = np.argmax(i)
-        if ab == 6:
-            result = ab
-            print(ab)
-        else:
-            result = ab
-            print(ab)
+        if ab == 0:
+            result = 'Alisa'
+        elif ab == 1:
+            result = 'Asuka'
+        elif ab == 2:
+            result = 'Bryan'
+        elif ab == 3:
+            result = 'DevilJin'
+        elif ab == 4:
+            result = 'Dragunov'
+        elif ab == 5:
+            result = 'Heihachi'
+        elif ab == 6:
+            result = 'Hwoarang'
+        elif ab == 7:
+            result = 'Katarina'
+        elif ab == 8:
+            result = 'Kazuya'
+        elif ab == 9:
+            result = 'King'
+        elif ab == 10:
+            result = 'Leroy'
+        elif ab == 11:
+            result = 'Lili'
+        elif ab == 12:
+            result = 'XiaoyuLing'
+        elif ab == 13:
+            result = 'PaulPhoenix'
+        elif ab == 14:
+            result = 'Yoshimitsu'
+        elif ab == 15:
+            result = 'Zafina'
+        elif ab == 16:
+            result = 'Ganryu'
+        elif ab == 17:
+            result = 'Gigas'
+        elif ab == 18:
+            result = 'Geese'
+        elif ab == 19:
+            result = 'Negan'
+        elif ab == 20:
+            result = 'Noctis'
+        elif ab == 21:
+            result = 'Nina'
+        elif ab == 22:
+            result = 'Lars'
+        elif ab == 23:
+            result = 'Lucky_Chole'
+        elif ab == 24:
+            result = 'Leo'
+        elif ab == 25:
+            result = 'Lei'
+        elif ab == 26:
+            result = 'Law'
+        elif ab == 27:
+            result = 'Lee'
+        elif ab == 28:
+            result = 'Lidia'
+        elif ab == 29:
+            result = 'Master_Raven'
+        elif ab == 30:
+            result = 'Marduk'
+        elif ab == 31:
+            result = 'Miguel'
+        elif ab == 32:
+            result = 'Bob'
+        elif ab == 33:
+            result = 'Shaheen'
+        elif ab == 34:
+            result = 'Steve'
+        elif ab == 35:
+            result = 'ArmorKing'
+        elif ab == 36:
+            result = 'Akuma'
+        elif ab == 37:
+            result = 'Anna'
+        elif ab == 38:
+            result = 'Eddy'
+        elif ab == 39:
+            result = 'Eliza'
+        elif ab == 40:
+            result = 'Jack-7'
+        elif ab == 41:
+            result = 'Josie'
+        elif ab == 42:
+            result = 'Julia'
+        elif ab == 43:
+            result = 'Kazumi'
+        elif ab == 44:
+            result = 'Kunimitsu'
+        elif ab == 45:
+            result = 'Kuma'
+        elif ab == 46:
+            result = 'Claudio'
+        elif ab == 47:
+            result = 'Fahkuram'
+        elif ab == 48:
+            result = 'Feng'
+        elif ab == 49:
+            result = 'Panda'
+        elif ab == 50:
+            result = 'Jin'
+            
 
 
     #파일을 삭제
@@ -81,9 +178,9 @@ def result():
     resultid = len(all_result) + 1
 
     #numpy.int64 타입은 저장이 불가해서 int 타입으로 변형
-    face_result = int(result)
-    doc = {'id': resultid , 'result': face_result }
+ 
+    doc = {'id': resultid , 'result': result }
     
     db.compared_face_result.insert_one(doc)
     
-    return render_template('result.html', result=result)
+    return redirect(url_for('char_result.home', result=result))

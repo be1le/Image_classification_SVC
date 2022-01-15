@@ -20,26 +20,29 @@
 <body>
     <div id="container">
         <header>
-            <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/tekken7.png">
+            <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/tekken7.png" onclick="home()">
             <div id="header-box">
                 <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
                 <div>
-                    <button id="green-btn" class="btn">닮은꼴 TOP3 캐릭터</button>
-                    <button id="green-btn" class="btn">캐릭터 스토리</button>
-                    <button id="green-btn" class="btn">캐릭터 승률</button>
+                    <button id="green-btn" class="btn" onclick="all_char()">캐릭터 스토리</button>
+                    <button id="green-btn" class="btn"
+                        onclick="$( 'html, body' ).stop().animate( { scrollTop : '1100' } )">
+                        캐릭터 승률
+                    </button>
                 </div>
             </div>
         </header>
-        <div class="users" id="font-color">지금까지 ${}명이 테스트했습니다.</div>
+        <div class="users" id="font-color">지금까지 {{all_result}}명이 테스트했습니다.</div>
         <main>
             <div id="result">
                 <div id="explain-box">
-                    <p id="exp-title">${캐릭터 이름}</p>
-                    <p id="exp-short">Alisa Bosconovitch는 Bosconovitch 박사가 첨단 군사기술로 만들어냈습니다.
-                        Alisa는 매우 민첩하고 빠른 캐릭터입니다. 그녀의 이동성과 좋은 범위는 Alisa를 현명한 위치 지정과 신중한 플레이어에게 보상하는 훌륭한 찌르기 캐릭터입니다.
-                        Alisa의 독특한 기능 중 하나는 두 팔이 전기톱으로 변하는 자세로 전환할 수 있다는 것입니다.</p>
+                    <p id="exp-title">{{name}}</p>
+                    <p id="exp-short">{{style}}</p>
+                    <p id="exp-short">{{story}}</p>
+                    </p>
                 </div>
-                <div id="img-box">
+                <div id="img-box"
+                    style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/{{name}}.png);">
                 </div>
             </div>
         </main>
@@ -51,29 +54,31 @@
                 <p>{{name}} 승률</p>
             </div>
             <div id="pick">
-                <p>픽 순위: </p>
+                <p>픽 순위:{{Rank}}</p>
             </div>
             <div id="all-winning">
-                <p>전체 승률: </p>
+                <p>전체 승률:{{Winrate}}</p>
             </div>
             <div id="omega">
-                <p>오메가: </p>
+                <p>오메가:{{Omega}}</p>
             </div>
             <div class="dropdown">
                 <button class="drop-btn">VS 승률 ▼</button>
                 <div class="drop-menu">
-                    <a href="#">VS {{name}}</a>
+                    {% for i in enemy %}
+                    <a href="#">VS {{i}}</a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <div id="winning-per">
             <p>{{name}}</p>
             <p>{{name}} 승률:</p>
-            <p>{{name}}</p>
+            <p></p>
         </div>
         <div id="winning-box">
-            <div id="pick-img">
-
+            <div id="pick-img"
+                style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/{{name}}.png);">
             </div>
             <div id="versus-box">
                 <p>VS</p>

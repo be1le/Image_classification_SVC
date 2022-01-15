@@ -15,237 +15,69 @@
 
     <div id="container">
         <header>
-            <img src="../img/tekken7.png">
+            <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/tekken7.png" onclick="home()">
             <div id="header-box">
                 <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
                 <div>
-                    <button id="green-btn" class="btn">닮은꼴 TOP3 캐릭터</button>
                     <button id="green-btn" class="btn">캐릭터 스토리</button>
                     <button id="green-btn" class="btn">캐릭터 승률</button>
                 </div>
             </div>
         </header>
+
         <main id="main">
             <div id="character-l">
+                {% for i in a_char %}
+                {% set name = i.name %}
                 <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
+                    <p class="text">{{name}}</p>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png" alt='{{name}}'
+                        onclick="load_detail(this.alt)">
                 </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
+                {% endfor %}
             </div>
             <div id="character-r">
+                {% for i in b_char %}
+                {% set name = i.name %}
                 <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
+                    <p class="text">{{name}}</p>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png" alt='{{name}}'
+                        onclick="load_detail(this.alt)">
                 </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
+                {% endfor %}
+
             </div>
             <div id="character-l">
+                {% for i in c_char %}
+                {% set name = i.name %}
                 <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
+                    <p class="text">{{name}}</p>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png" alt='{{name}}'
+                        onclick="load_detail(this.alt)">
                 </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
+                {% endfor %}
             </div>
             <div id="character-r">
+                {% for i in d_char %}
+                {% set name = i.name %}
                 <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
+                    <p class="text">{{name}}</p>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png" alt='{{name}}'
+                        onclick="load_detail(this.alt)">
                 </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-            </div>
-            <div id="character-l">
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
+                {% endfor %}
             </div>
             <div id="character-last">
+                {% for i in e_char %}
+                {% set name = i.name %}
                 <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
+                    <p class="text">{{name}}</p>
+                    <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png" alt='{{name}}'
+                        onclick="load_detail(this.alt)">
                 </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
-                <div class="char-btn">
-                    <p class="text">앨리사</p>
-                    <img src="../img/Alisa.png">
-                </div>
+                {% endfor %}
             </div>
+
         </main>
     </div>
     <footer>

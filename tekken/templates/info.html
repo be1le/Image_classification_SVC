@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< Updated upstream
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,6 +25,35 @@
                 <button id="green-btn" class="btn">캐릭터 스토리</button>
                 <button id="green-btn" class="btn">캐릭터 승률</button>  
                 </div>   
+=======
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <title>캐릭터 스토리</title>
+    <link rel="stylesheet" href="../static/info.css">
+    <script defer="" src="../static/main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&amp;family=Yeon+Sung&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/tekken7.png">
+            <div id="header-box">
+                <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
+                <div>
+                    <button id="green-btn" class="btn">닮은꼴 TOP3 캐릭터</button>
+                    <button id="green-btn" class="btn">캐릭터 스토리</button>
+                    <button id="green-btn" class="btn">캐릭터 승률</button>
+                </div>
+>>>>>>> Stashed changes
             </div>
         </header>
         <div class="users" id="font-color">지금까지 ${}명이 테스트했습니다.</div>
@@ -42,13 +72,58 @@
     </div>
     <hr style="width:70%;height:3px;border:none;background-color:rgb(126, 27, 27);">
     <div id="lower-container">
-        <p id="winning-title">캐릭터 승률</p>
+        <div id="lowtitle-box">
+            <div id="winning-title">
+                <p>{{name}} 승률</p>
+            </div>
+            <div id="pick">
+                <p>픽 순위: </p>
+            </div>
+            <div id="all-winning">
+                <p>전체 승률: </p>
+            </div>
+            <div id="omega">
+                <p>오메가: </p>
+            </div>
+            <div class="dropdown">
+                <button class="drop-btn">VS 승률 ▼</button>
+                <div class="drop-menu">
+                    <a href="#">VS {{name}}</a>
+                </div>
+            </div>
+        </div>
+        <div id="winning-per">
+            <p>{{name}}</p>
+            <p>{{name}} 승률:</p>
+            <p>{{name}}</p>
+        </div>
         <div id="winning-box">
+<<<<<<< Updated upstream
                 sadfsadfsadfasdfasdf
+=======
+            <div id="pick-img">
+
+            </div>
+            <div id="versus-box">
+                <p>VS</p>
+            </div>
+            <div id="enemy-img">
+
+            </div>
+>>>>>>> Stashed changes
         </div>
     </div>
     <footer>
         <p id="font-color">Copyright 2022. BlueClub inc. all rights reserved.</p>
     </footer>
+<<<<<<< Updated upstream
     </body>
 </html>
+=======
+
+
+</body>
+
+
+</html>
+>>>>>>> Stashed changes

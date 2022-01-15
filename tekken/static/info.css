@@ -1,3 +1,4 @@
+
 #green-btn {
     background-color: rgb(27, 126, 27);
 
@@ -53,7 +54,7 @@ body {
     align-items: center;
 }
 
-/*              HEADER 시작              */
+/*              HEADER ì‹œìž‘              */
 
 header {
     margin: 2% 0;
@@ -85,7 +86,7 @@ header #header-box {
     margin-bottom: 3%;
 }
 
-/*      HEADER  끝      MAIN 시작      */
+/*      HEADER  ë      MAIN ì‹œìž‘      */
 
 #result p {
     font-size: 1.4rem;
@@ -146,7 +147,7 @@ main {
     margin-top: -5%;
 }
 
-/*       승률 부분 시작        */
+/*       ìŠ¹ë¥  ë¶€ë¶„ ì‹œìž‘        */
 #lower-container {
     width: 70%;
     align-items: center;
@@ -160,7 +161,132 @@ main {
     margin-top: -0.5%;
 }
 
-/*      MAIN  끝      FOOTER 시작      */
+.drop-btn {
+    background-color: rgb(126, 27, 27);
+    color: white;
+    width: 8rem;
+    height: 2rem;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(126, 27, 27);
+    border-image: initial;
+    border-radius: 0.3vw;
+}
+
+.drop-menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    align-items: center;
+    background-color: rgb(59, 0, 0);
+    color: white;
+    width: 8rem;
+    max-height: 100px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(126, 27, 27);
+    border-image: initial;
+    border-radius: 0.3vw;
+    overflow: scroll;
+}
+
+.drop-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 3px 0px;
+    padding: 0.5rem;
+}
+
+.drop-menu a:hover {
+
+}
+
+.drop-menu::-webkit-scrollbar {
+    display: none;
+}
+
+#pick, #all-winning, #omega {
+    color: white;
+    width: 8rem;
+    height: 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(126, 27, 27);
+    border-image: initial;
+    border-radius: 0.3vw;
+}
+
+#lowtitle-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -3%;
+}
+
+#winning-per {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    font-family: "Yeon Sung", cursive;
+    color: rgb(255, 255, 117);
+    font-size: 40px;
+}
+
+#winning-per p:first-child, #winning-per p:last-child {
+    font-size: 20px;
+    color: white;
+}
+
+#versus-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Yeon Sung", cursive;
+    color: rgb(255, 255, 117);
+}
+
+#versus-box p {
+    font-size: 60px;
+}
+
+
+#winning-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pick-img {
+    background-image: url(../static/img/Face_Image/akuma.png);
+    background-size: 400px;
+    width: 500px;
+    height: 800px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#enemy-img {
+    background-image: url(../static/img/Face_Image/bryan.png);
+    background-size: 400px;
+    width: 500px;
+    height: 800px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/*      MAIN  ë      FOOTER ì‹œìž‘      */
 
 footer {
     width: 100%;
@@ -175,9 +301,9 @@ footer p {
     font-size: small;
 }
 
-/*             FOOTER  끝             */
+/*             FOOTER  ë             */
 
-/* 드래그앤드랍 */
+/* ë“œëž˜ê·¸ì•¤ë“œëž */
 /* .dropArea img {
     position: absolute;
     transform: translate(50, 50);

@@ -5,7 +5,7 @@
     border-radius: 0.3vw;
     color: white;
 
-    width: 8rem;
+    width: 8.5rem;
     height: 2rem;
 
     cursor: pointer;
@@ -109,7 +109,7 @@ header #header-box {
     border: 2px solid white;
     border-radius: 50px;
     width: 400px;
-    height: 400px;
+    height: 300px;
     background-color: rgba(121, 16, 16, 0.157);
 
     display: flex;
@@ -117,8 +117,10 @@ header #header-box {
     flex-direction: column;
     align-items: center;
 
-    margin-top: 6%;
-    margin-bottom: 3%;
+    margin-top: 10%;
+    margin-bottom: 2%;
+
+    overflow: hidden;
 }
 
 .web-btn {
@@ -130,6 +132,10 @@ header #header-box {
 }
 
 #camera {
+    display: none;
+}
+
+#canvas {
     display: none;
 }
 
@@ -180,3 +186,81 @@ footer p {
     align-items: center;
     overflow: hidden;
 } */
+<<<<<<< Updated upstream
+=======
+
+#capture {
+        background-color: rgb(126, 27, 27);
+        border: 1px solid rgb(126, 27, 27);
+        border-radius: 0.3vw;
+        color: white;
+    
+        width: 8rem;
+        height: 2rem;
+    
+        cursor: pointer;
+    
+}
+
+#capture:hover {
+    background-color: rgb(59, 0, 0);
+    border: 1px solid rgb(126, 27, 27);
+    font-weight: bold;
+    transition-duration: 0.6s;
+}
+
+#re_capture {
+    background-color: rgb(126, 27, 27);
+    border: 1px solid rgb(126, 27, 27);
+    border-radius: 0.3vw;
+    color: white;
+
+    width: 8rem;
+    height: 2rem;
+
+    cursor: pointer;
+
+    margin-right: 2px;
+
+}
+
+#re_capture:hover {
+    background-color: rgb(59, 0, 0);
+    border: 1px solid rgb(126, 27, 27);
+    font-weight: bold;
+    transition-duration: 0.6s;
+}
+
+#show_result {
+    background-color: rgb(126, 27, 27);
+    border: 1px solid rgb(126, 27, 27);
+    border-radius: 0.3vw;
+    color: white;
+
+    width: 8rem;
+    height: 2rem;
+
+    cursor: pointer;
+
+    margin-left: 2px;
+
+}
+
+#show_result:hover {
+    background-color: rgb(59, 0, 0);
+    border: 1px solid rgb(126, 27, 27);
+    font-weight: bold;
+    transition-duration: 0.6s;
+}
+
+#camera {
+    width: 100%;
+    height: 100%;
+}
+
+#result-btn {
+    display: flex;
+    justify-content: space-between;
+    
+}
+>>>>>>> Stashed changes

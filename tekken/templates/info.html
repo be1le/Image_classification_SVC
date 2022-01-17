@@ -13,8 +13,7 @@
     <script defer="" src="../static/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&amp;family=Yeon+Sung&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&amp;family=Yeon+Sung&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -25,8 +24,7 @@
                 <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
                 <div>
                     <button id="green-btn" class="btn" onclick="all_char()">캐릭터 스토리</button>
-                    <button id="green-btn" class="btn"
-                        onclick="$( 'html, body' ).stop().animate( { scrollTop : '1100' } )">
+                    <button id="green-btn" class="btn" onclick="$( 'html, body' ).stop().animate( { scrollTop : '1100' } )">
                         캐릭터 승률
                     </button>
                 </div>
@@ -41,8 +39,7 @@
                     <p id="exp-short">{{story}}</p>
                     </p>
                 </div>
-                <div id="img-box"
-                    style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/{{name}}.png);">
+                <div id="img-box" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/{{name}}.png);">
                 </div>
             </div>
         </main>
@@ -66,26 +63,25 @@
                 <button class="drop-btn">VS 승률 ▼</button>
                 <div class="drop-menu">
                     {% for i in enemy %}
-                    <a href="#">VS {{i}}</a>
-                    {% endfor %}
+                    <a id="enemy" onclick="enemy()">VS {{i}}</a> {% endfor %}
                 </div>
             </div>
         </div>
-        <div id="winning-per">
-            <p>{{name}}</p>
-            <p>{{name}} 승률:</p>
-            <p></p>
-        </div>
-        <div id="winning-box">
-            <div id="pick-img"
-                style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/{{name}}.png);">
+        <div id="temp">
+            <!-- <div id="winning-per">
+                <p>{{name}}</p>
+                <p>{{name}} 상대 승률:</p>
+                <p id='enemy-title'></p>
             </div>
-            <div id="versus-box">
-                <p>VS</p>
-            </div>
-            <div id="enemy-img">
-
-            </div>
+            <div id="winning-box">
+                <div id="pick-img" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/{{name}}.png);">
+                </div>
+                <div id="versus-box">
+                    <p>VS</p>
+                </div>
+                <div id="enemy-img">
+                </div>
+            </div> -->
         </div>
     </div>
     <footer>

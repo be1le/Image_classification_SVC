@@ -1,14 +1,10 @@
-
 #green-btn {
     background-color: rgb(27, 126, 27);
-
     border: 1px solid rgb(27, 126, 27);
     border-radius: 0.3vw;
     color: white;
-
     width: 8rem;
     height: 2rem;
-
     cursor: pointer;
 }
 
@@ -17,10 +13,8 @@
     border: 1px solid rgb(126, 27, 27);
     border-radius: 0.3vw;
     color: white;
-
     width: 8rem;
     height: 2rem;
-
     cursor: pointer;
 }
 
@@ -54,11 +48,11 @@ body {
     align-items: center;
 }
 
+
 /*              HEADER ì‹œìž‘              */
 
 header {
     margin: 2% 0;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,6 +80,7 @@ header #header-box {
     margin-bottom: 3%;
 }
 
+
 /*      HEADER  ë      MAIN ì‹œìž‘      */
 
 #result p {
@@ -97,24 +92,25 @@ header #header-box {
     display: none;
 }
 
+
 /* drop area */
+
 main {
     width: 100%;
 }
+
 #result {
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 3%;
 }
+
 #img-box {
     background-size: contain;
     background-position: center;
-
     width: 500px;
     height: 800px;
-
     margin-left: 5%;
     background-repeat: no-repeat;
 }
@@ -131,7 +127,6 @@ main {
 #explain-box #exp-title {
     font-size: 40px;
     font-family: "Yeon Sung", cursive;
-
     color: rgb(255, 117, 117);
     margin-top: -10%;
 }
@@ -140,20 +135,21 @@ main {
     font-size: 20px;
     font-family: "Noto Sans KR", sans-serif;
     color: rgb(117, 255, 170);
-
     margin-top: 5%;
 }
 
+
 /*       ìŠ¹ë¥  ë¶€ë¶„ ì‹œìž‘        */
+
 #lower-container {
     width: 70%;
     align-items: center;
     margin: 0 auto;
 }
+
 #lower-container #winning-title {
     font-size: 40px;
     font-family: "Yeon Sung", cursive;
-
     color: rgb(255, 117, 117);
     margin-top: -0.5%;
 }
@@ -176,22 +172,17 @@ main {
     border-radius: 0.3vw;
 }
 
-
 .drop-menu {
-    
     display: none;
     z-index: 1;
-    
     background-color: rgb(59, 0, 0);
     color: white;
     width: 8rem;
-    max-height: 150px;
+    max-height: 195px;
     cursor: pointer;
     border: 1px solid rgb(126, 27, 27);
     border-radius: 0.3vw;
     overflow: scroll;
-
-    padding-top: 100px;
 }
 
 .dropdown:hover .drop-menu {
@@ -201,14 +192,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
 }
-
-.dropdown:hover .drop-btn {
-    display: none;
-
-}
-
 
 .drop-menu a {
     position: relative;
@@ -231,7 +215,9 @@ main {
     display: none;
 }
 
-#pick, #all-winning, #omega {
+#pick,
+#all-winning,
+#omega {
     color: white;
     width: 8rem;
     height: 2rem;
@@ -245,7 +231,7 @@ main {
     border-radius: 0.3vw;
 }
 
-/* #winning-per {
+#winning-per {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
@@ -254,7 +240,8 @@ main {
     font-size: 40px;
 }
 
-#winning-per p:first-child, #winning-per p:last-child {
+#winning-per p:first-child,
+#winning-per p:last-child {
     font-size: 20px;
     color: white;
 }
@@ -266,12 +253,11 @@ main {
     align-items: center;
     font-family: "Yeon Sung", cursive;
     color: rgb(255, 255, 117);
-} */
+}
 
 #versus-box p {
     font-size: 60px;
 }
-
 
 #winning-box {
     display: flex;
@@ -280,7 +266,6 @@ main {
 }
 
 #pick-img {
-  
     background-size: contain;
     width: 500px;
     height: 800px;
@@ -303,6 +288,7 @@ main {
     background-repeat: no-repeat;
 }
 
+
 /*      MAIN  ë      FOOTER ì‹œìž‘      */
 
 footer {
@@ -318,9 +304,13 @@ footer p {
     font-size: small;
 }
 
+
 /*             FOOTER  ë             */
 
+
 /* ë“œëž˜ê·¸ì•¤ë“œëž */
+
+
 /* .dropArea img {
     position: absolute;
     transform: translate(50, 50);

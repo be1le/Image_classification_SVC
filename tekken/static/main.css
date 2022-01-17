@@ -1,13 +1,10 @@
 #green-btn {
     background-color: rgb(27, 126, 27);
-
     border: 1px solid rgb(27, 126, 27);
     border-radius: 0.3vw;
     color: white;
-
     width: 8.5rem;
     height: 2rem;
-
     cursor: pointer;
 }
 
@@ -16,10 +13,8 @@
     border: 1px solid rgb(126, 27, 27);
     border-radius: 0.3vw;
     color: white;
-
     width: 8rem;
     height: 2rem;
-
     cursor: pointer;
 }
 
@@ -57,11 +52,11 @@ body {
     align-items: center;
 }
 
+
 /*              HEADER 시작              */
 
 header {
     margin: 2% 0;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,8 +84,6 @@ header #header-box {
     margin-bottom: 3%;
 }
 
-#header-box div {
-}
 
 /*      HEADER  끝      MAIN 시작      */
 
@@ -103,6 +96,7 @@ header #header-box {
     display: none;
 }
 
+
 /* drop area */
 
 .dropArea {
@@ -111,15 +105,12 @@ header #header-box {
     width: 400px;
     height: 300px;
     background-color: rgba(121, 16, 16, 0.157);
-
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
     margin-top: 10%;
     margin-bottom: 2%;
-
     overflow: hidden;
 }
 
@@ -139,6 +130,7 @@ header #header-box {
     display: none;
 }
 
+
 /*      MAIN  끝      FOOTER 시작      */
 
 footer {
@@ -154,9 +146,13 @@ footer p {
     font-size: small;
 }
 
+
 /*             FOOTER  끝             */
 
+
 /* 드래그앤드랍 */
+
+
 /* .dropArea img {
     position: absolute;
     transform: translate(50, 50);
@@ -188,16 +184,13 @@ footer p {
 } */
 
 #capture {
-        background-color: rgb(126, 27, 27);
-        border: 1px solid rgb(126, 27, 27);
-        border-radius: 0.3vw;
-        color: white;
-    
-        width: 8rem;
-        height: 2rem;
-    
-        cursor: pointer;
-    
+    background-color: rgb(126, 27, 27);
+    border: 1px solid rgb(126, 27, 27);
+    border-radius: 0.3vw;
+    color: white;
+    width: 8rem;
+    height: 2rem;
+    cursor: pointer;
 }
 
 #capture:hover {
@@ -212,14 +205,10 @@ footer p {
     border: 1px solid rgb(126, 27, 27);
     border-radius: 0.3vw;
     color: white;
-
     width: 8rem;
     height: 2rem;
-
     cursor: pointer;
-
     margin-right: 2px;
-
 }
 
 #re_capture:hover {
@@ -234,14 +223,10 @@ footer p {
     border: 1px solid rgb(126, 27, 27);
     border-radius: 0.3vw;
     color: white;
-
     width: 8rem;
     height: 2rem;
-
     cursor: pointer;
-
     margin-left: 2px;
-
 }
 
 #show_result:hover {
@@ -259,5 +244,4 @@ footer p {
 #result-btn {
     display: flex;
     justify-content: space-between;
-    
 }

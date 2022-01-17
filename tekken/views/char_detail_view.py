@@ -41,3 +41,15 @@ def home(name):
     all_result = len(result_list)
 
     return render_template('info.html', name=name, Rank=Rank, Winrate=Winrate, Omega=Omega, story=story, style=style, all_result=all_result, enemy=vs_enemy)
+
+
+@bp.route('/search_vs', methods=["GET"]) 
+def search(): 
+    char = request.form['char_give'] 
+    vs_char = request.form['vs_char_give'] 
+    char = db.char.find_one({'name': char }) 
+    vs = char[vs_char] 
+    vs_per = "{:.2f}".format(vs) 
+    print(char)
+    print(vs_char)
+    return jsonify({'result': vs_per})

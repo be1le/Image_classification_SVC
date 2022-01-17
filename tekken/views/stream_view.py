@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify,Blueprint
+from flask import Flask, render_template, Blueprint
 from datetime import datetime
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import tensorflow as tf

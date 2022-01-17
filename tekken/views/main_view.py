@@ -178,7 +178,7 @@ def result():
     resultid = len(all_result) + 1
 
     #numpy.int64 타입은 저장이 불가해서 int 타입으로 변형
- 
+
     doc = {'id': resultid , 'result': result }
     
     db.compared_face_result.insert_one(doc)

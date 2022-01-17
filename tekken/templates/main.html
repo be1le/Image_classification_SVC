@@ -29,7 +29,9 @@
             <video id="camera" height="400px" autoplay></video>
             <canvas id="canvas" width="400px" height="300px"></canvas>
             <p class="boxText" style="text-align: center;" id='boxtext'>
-                사진을 업로드 하거나,<br>
+                사진을 업로드 하거나<br>
+                (Drag&Drop도 가능합니다.)<br>
+                <br>
                 웹캠 켜기 버튼을 누르고<br>
                 박스 안에 얼굴을 위치해주세요.
             </p>
@@ -40,10 +42,12 @@
             </div>
         </div>
         <button id="capture" style="display: none;" onclick="hide_show()">촬영하기</button>
+        
         <div id='result-btn'>
             <button id='re_capture' style="display: none;" onclick="reset()">다시찍기</button>
             <button id='show_result' style="display: none;" onclick="posting()">결과보기</button>
         </div>
+        <p id="warning">**사진은 닮은꼴 판별 후 저장되지 않고, 바로 <span>삭제</span>됩니다.**</p>
     </div>
     </div>
     <footer>

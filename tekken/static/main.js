@@ -7,17 +7,18 @@ function cameraOn() {
     document.getElementById("boxtext").style.display = "None"
     document.getElementById("red-btn").style.display = "None"
     document.getElementById("canvas").style.display = "None"
+    document.getElementById("upimg-box").style.display = "None"
+
     var canvas = document.getElementById("canvas")
     canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
 }
 
-// $(document).ready(function () {
-//   if (!('url' in window) && ('webkitURL' in window)) { window.URL = window.webkitURL; }
-//   $('#camera').change(function (e) {
-//     $('#canvas').attr('src', URL.createObjectURL(e.target.files[0])
-//     );
-//   });
-// });
+$(document).ready(function() {
+    if (!('url' in window) && ('webkitURL' in window)) { window.URL = window.webkitURL; }
+    $('#camera').change(function(e) {
+        $('#canvas').attr('src', URL.createObjectURL(e.target.files[0]));
+    });
+});
 
 
 
@@ -187,7 +188,7 @@ function enemy(value) {
     $.ajax({
         type: 'POST',
         url: '/char_detail/search_vs',
-        data: {vs_char_give: enemy, char_give: name},
+        data: { vs_char_give: enemy, char_give: name },
         success: function(response) {
             let result = response['result']
             console.log(enemy, name, result)
@@ -210,7 +211,7 @@ function enemy(value) {
                             `
 
             $('#temp').html(temp_html)
-            
+
         }
     });
 }

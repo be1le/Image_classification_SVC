@@ -13,10 +13,9 @@
     border: 1px solid rgb(126, 27, 27);
     border-radius: 0.3vw;
     color: white;
-    width: 132px;
-    height: 32px;
+    width: 8rem;
+    height: 3rem;
     cursor: pointer;
-    padding: -2px;
 }
 
 #red-btn:hover {
@@ -39,50 +38,31 @@
 
 body {
     background-color: rgb(31, 31, 31);
-    background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/background.png);
-    background-position-x: 130%;
-    background-position-y: -35%;
-    background-size: 1100px;
-    background-repeat: no-repeat;
+    background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/XiaoYu.png), url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/Zafina.png), url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/Lili.png), url(../static/img/lucky.png);
+    background-position-x: 5%, 95%, 30%, 75%;
+    background-position-y: -60%, -35%, -20%, 80%;
+    background-size: 550px, 780px, 200px, 350px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 }
 
 #container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20%;
+}
+
+#container header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-
-/*              HEADER 시작              */
-
-header {
-    margin: 2% 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header img {
-    width: 800px;
-    cursor: pointer;
-}
-
-header #header-box {
-    display: flex;
-    flex-direction: column;
-}
-
-#header-box {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: center;
-}
-
-#header-box .title {
-    font-size: 35px;
-    margin-bottom: 3%;
+#container a {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 2%;
 }
 
 
@@ -110,14 +90,13 @@ header #header-box {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 6%;
+    margin-top: 10%;
     margin-bottom: 2%;
     overflow: hidden;
 }
 
 .web-btn {
     margin-top: 5%;
-    margin-right: 2px;
 }
 
 .cam-btn {
@@ -130,36 +109,6 @@ header #header-box {
 
 #canvas {
     display: none;
-}
-
-#up-img {
-    font-size: small;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 2px;
-    background-color: rgb(126, 27, 27);
-    border: 1px solid rgb(126, 27, 27);
-    border-radius: 0.3vw;
-    color: white;
-    width: 130px;
-    height: 30px;
-    cursor: pointer;
-    padding: -2px;
-}
-
-#up-img:hover {
-    background-color: rgb(59, 0, 0);
-    border: 1px solid rgb(126, 27, 27);
-    font-weight: bold;
-    transition-duration: 0.6s;
-}
-
-#upimg-box {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
 }
 
 

@@ -25,5 +25,19 @@ def home(name):
     char = db.char.find_one({'name': name})
 
     name = char['name']
+
     
-    return render_template('info.html',name= name)
+    return render_template('info.html',name = name)
+
+@bp.route('/search_vs')
+def search():
+    char = request.form['char_give']
+    vs_char = request.form['vs_char_give']
+
+    vs = vs_char.split(" ")[1]
+
+    char = db.char.find_one({'name': char })
+    vs_char = char[vs]
+    vs_per = "{:.2f}".format(vs_char)
+
+    return jsonify({'result': vs_per})

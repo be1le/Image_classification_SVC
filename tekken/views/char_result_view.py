@@ -32,24 +32,48 @@ def home(result):
     for i in result_list:
         name = i['result']
         top_list.append(name)
-
+    
+    #첫번째 높은순위 
     counts = collections.Counter(top_list)
 
-    rank = counts.most_common(51)
+    a = counts.most_common(1)[0][0]
+    a_number = counts.most_common(1)[0][1]
 
-    all_rank = {}
-    all_per = {}
     top_len = len(top_list)
-    tr = 0
-    while tr < 51:
+    a_per = "%.2f" % (a_number * 100 / top_len)
+    
+    # 2번쨰 높은 순위 
+    b_list = top_list
+    while a in b_list:
         
-        try:
-            all_rank["rank{0}".format(tr)] = rank[tr][0]
-            all_per["rank{0}".format(tr)] = "%.2f" % (rank[tr][1] * 100 / top_len)
-            tr = tr+1
-        except:
-            break
+        b_list.remove(a)
+
+    counts = collections.Counter(b_list)
+
+    b = counts.most_common(1)[0][0]
+    b_number = counts.most_common(1)[0][1]
+    b_per = "%.2f" % (b_number * 100 / top_len)
+    
+
+
+    # 3번째 높은 순위 
+    c_list = top_list
+    while b in c_list:
+        c_list.remove(b)
+
+    counts = collections.Counter(c_list)
+
+    c = counts.most_common(1)[0][0]
+    c_number = counts.most_common(1)[0][1]
+    c_per = "%.2f" % (c_number * 100 / top_len)
+
+    print(c_per)
+    print(b_per)
+    print(a_per)
+    print(a)
+    print(b)
+    print(c)
 
 
 
-    return render_template('result.html', name = name, face = face ,all_result = all_result, first=all_rank["rank0"],sec=all_rank["rank1"],thd=all_rank["rank2"],first_num=all_per["rank0"],sec_num=all_per["rank1"],thd_num=all_per["rank2"])
+    return render_template('result.html', name = name, face = face ,all_result = all_result, first=a,sec=b,thd=c,first_num=a_per,sec_num=b_per,thd_num=c_per)

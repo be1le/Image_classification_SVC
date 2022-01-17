@@ -1,13 +1,10 @@
 #green-btn {
     background-color: rgb(27, 126, 27);
-
     border: 1px solid rgb(27, 126, 27);
     border-radius: 0.3vw;
     color: white;
-
     width: 8rem;
     height: 2rem;
-
     cursor: pointer;
 }
 
@@ -16,10 +13,8 @@
     border: 1px solid rgb(126, 27, 27);
     border-radius: 0.3vw;
     color: white;
-
     width: 8rem;
     height: 2rem;
-
     cursor: pointer;
 }
 
@@ -53,11 +48,11 @@ body {
     align-items: center;
 }
 
-/*              HEADER 시작              */
+
+/*              HEADER ì‹œìž‘              */
 
 header {
     margin: 2% 0;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,7 +80,8 @@ header #header-box {
     margin-bottom: 3%;
 }
 
-/*      HEADER  끝      MAIN 시작      */
+
+/*      HEADER  ë      MAIN ì‹œìž‘      */
 
 #result p {
     font-size: 1.4rem;
@@ -96,25 +92,25 @@ header #header-box {
     display: none;
 }
 
+
 /* drop area */
+
 main {
     width: 100%;
 }
+
 #result {
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 3%;
 }
-#img-box {
-    background-image: url(../img/Full_Image/alisa_Full.png);
-    background-size: 400px;
-    background-position: center;
 
+#img-box {
+    background-size: contain;
+    background-position: center;
     width: 500px;
     height: 800px;
-
     margin-left: 5%;
     background-repeat: no-repeat;
 }
@@ -128,12 +124,9 @@ main {
     width: 30%;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+Display:ital,wght@1,100&family=Noto+Sans+KR:wght@300&display=swap");
-
 #explain-box #exp-title {
     font-size: 40px;
     font-family: "Yeon Sung", cursive;
-
     color: rgb(255, 117, 117);
     margin-top: -10%;
 }
@@ -142,25 +135,161 @@ main {
     font-size: 20px;
     font-family: "Noto Sans KR", sans-serif;
     color: rgb(117, 255, 170);
-
-    margin-top: -5%;
+    margin-top: 5%;
 }
 
-/*       승률 부분 시작        */
+
+/*       ìŠ¹ë¥  ë¶€ë¶„ ì‹œìž‘        */
+
 #lower-container {
     width: 70%;
     align-items: center;
     margin: 0 auto;
 }
+
 #lower-container #winning-title {
     font-size: 40px;
     font-family: "Yeon Sung", cursive;
-
     color: rgb(255, 117, 117);
     margin-top: -0.5%;
 }
 
-/*      MAIN  끝      FOOTER 시작      */
+#lowtitle-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -3%;
+}
+
+.drop-btn {
+    position: relative;
+    background-color: rgb(126, 27, 27);
+    color: white;
+    width: 8rem;
+    height: 2rem;
+    cursor: pointer;
+    border: 1px solid rgb(126, 27, 27);
+    border-radius: 0.3vw;
+}
+
+.drop-menu {
+    display: none;
+    z-index: 1;
+    background-color: rgb(59, 0, 0);
+    color: white;
+    width: 8rem;
+    max-height: 195px;
+    cursor: pointer;
+    border: 1px solid rgb(126, 27, 27);
+    border-radius: 0.3vw;
+    overflow: scroll;
+}
+
+.dropdown:hover .drop-menu {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.drop-menu a {
+    position: relative;
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0px;
+    padding: 0.3rem;
+}
+
+.drop-menu a:hover {
+    background-color: rgb(0, 63, 0);
+    border: 1px solid rgb(27, 126, 27);
+    border-radius: 4px;
+    transition-duration: 0.6s;
+    display: block;
+}
+
+.drop-menu::-webkit-scrollbar {
+    display: none;
+}
+
+#pick,
+#all-winning,
+#omega {
+    color: white;
+    width: 8rem;
+    height: 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(126, 27, 27);
+    border-image: initial;
+    border-radius: 0.3vw;
+}
+
+#winning-per {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    font-family: "Yeon Sung", cursive;
+    color: rgb(255, 255, 117);
+    font-size: 40px;
+}
+
+#winning-per p:first-child,
+#winning-per p:last-child {
+    font-size: 20px;
+    color: white;
+}
+
+#versus-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Yeon Sung", cursive;
+    color: rgb(255, 255, 117);
+}
+
+#versus-box p {
+    font-size: 60px;
+}
+
+#winning-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pick-img {
+    background-size: contain;
+    width: 500px;
+    height: 800px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#enemy-img {
+    background-image: url(../static/img/Face_Image/bryan.png);
+    background-size: contain;
+    width: 500px;
+    height: 800px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/*      MAIN  ë      FOOTER ì‹œìž‘      */
 
 footer {
     width: 100%;
@@ -175,9 +304,13 @@ footer p {
     font-size: small;
 }
 
-/*             FOOTER  끝             */
 
-/* 드래그앤드랍 */
+/*             FOOTER  ë             */
+
+
+/* ë“œëž˜ê·¸ì•¤ë“œëž */
+
+
 /* .dropArea img {
     position: absolute;
     transform: translate(50, 50);

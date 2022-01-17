@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-    <title>철권7 근본캐릭터 이미지 검색</title>
+    <title>내가 닮은 철권7 캐릭터 찾기</title>
     <link rel="stylesheet" href="../static/main.css">
     <script defer src="../static/main.js"></script>
 
@@ -15,39 +15,32 @@
 
     <div id="container">
         <header>
-            <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/tekken7.png">
+            <img src="https://tekken.s3.ap-northeast-2.amazonaws.com/tekken7.png" onclick="home()">
             <div id="header-box">
                 <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
                 <div>
-                    <button id="green-btn" class="btn">닮은꼴 TOP3 캐릭터</button>
                     <button id="green-btn" class="btn" onclick="all_char()">캐릭터 스토리</button>
                     <button id="green-btn" class="btn">캐릭터 승률</button>
                 </div>
             </div>
         </header>
-        <div class="users" id="font-color">지금까지 {{all_result}}명이 테스트했습니다.</div>
+        <div class="users" id="font-color">지금까지 39명이 테스트했습니다.</div>
         <div class="dropArea">
-            <video id="camera" autoplay></video>
-            <canvas id="canvas" width=400 height=300></canvas>
-            <button id="capture" style="display: none;" onclick="hide_show()">촬영하기</button>
-            <div style="display: flex;">
-                <button id='re_capture' style="display: none;" onclick="reset()">다시찍기</button>
-                <button id='show_result' style="display: none;" onclick="posting()">결과보기</button>
-            </div>
-            <P class="boxText" style="text-align: center;" id='boxtext'>
+            <video id="camera" height="400px" autoplay></video>
+            <canvas id="canvas" width="400px" height="300px"></canvas>
+            <p class="boxText" style="text-align: center;" id='boxtext'>
                 사진을 끌어다 놓거나,<br>
                 웹캠 켜기 버튼을 누르고<br>
                 박스 안에 얼굴을 위치해주세요.
-            </P>
-
+            </p>
             <button id="red-btn" class="web-btn" onclick="cameraOn()">웹캠 켜기</button>
-            <!-- 웹캠 켜기 누르면 vodeo 태그의 autoplay "true"로 -->
-
         </div>
-        <div id="loading">
-
+        <button id="capture" style="display: none;" onclick="hide_show()">촬영하기</button>
+        <div id='result-btn'>
+            <button id='re_capture' style="display: none;" onclick="reset()">다시찍기</button>
+            <button id='show_result' style="display: none;" onclick="posting()">결과보기</button>
         </div>
-
+    </div>
     </div>
     <footer>
         <p id="font-color">Copyright 2022. BlueClub inc. all rights reserved.</p>

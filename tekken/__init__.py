@@ -1,6 +1,5 @@
 from flask import Flask
 
-from .views import char_result_view
 
 
 

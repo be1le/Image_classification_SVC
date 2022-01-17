@@ -23,7 +23,8 @@
             <div id="header-box">
                 <p id="font-color" class="title">내가 닮은 철권7 캐릭터는?</p>
                 <div>
-                    <button id="green-btn" class="btn" onclick="$( 'html, body' ).stop().animate( { scrollTop : '1100' } )">닮은꼴 TOP3 캐릭터</button>
+                    <button id="green-btn" class="btn"
+                        onclick="$( 'html, body' ).stop().animate( { scrollTop : '1100' } )">닮은꼴 TOP3 캐릭터</button>
                     <button id="green-btn" class="btn" onclick="all_char()">캐릭터 스토리</button>
                     <button id="green-btn" class="btn" onclick="all_char()">캐릭터 승률</button>
                 </div>
@@ -32,7 +33,9 @@
         <div class="users" id="font-color">지금까지 {{all_result}}명이 테스트했습니다.</div>
         <main>
             <div id="result">
-                <div id="img-box" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png)" onclick="home()">
+                <div id="img-box"
+                    style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{name}}.png)"
+                    onclick="home()">
                 </div>
                 <div id="explain-box">
                     <p id="exp-title">당신은 철권7 캐릭터 중 <span>{{name}}</span>와 닮았습니다.</p>
@@ -51,21 +54,24 @@
             <div id="ranking-box">
                 <div id="rank-box">
                     <div id='rank-level'>TOP1</div>
-                    <div id="rank1" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{first[0]}}.png)">
+                    <div id="rank1"
+                        style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{first[0]}}.png)">
                     </div>
                     <p id="rank-name1" class="rank-name">{{first[0]}}</p>
                     <p id="rank1-per" class="per">{{first[1]}}%</p>
                 </div>
                 <div id="rank-box">
                     <div id='rank-level'>TOP2</div>
-                    <div id="rank2" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{sec[0]}}.png)">
+                    <div id="rank2"
+                        style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{sec[0]}}.png)">
                     </div>
                     <p id="rank-name2" class="rank-name">{{sec[0]}}</p>
                     <p id="rank2-per" class="per">{{sec[1]}}%</p>
                 </div>
                 <div id="rank-box">
                     <div id='rank-level'>TOP3</div>
-                    <div id="rank3" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{thd[0]}}.png);">
+                    <div id="rank3"
+                        style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{thd[0]}}.png);">
                     </div>
                     <p id="rank-name3" class="rank-name">{{thd[0]}}</p>
                     <p id="rank-per" class="per">{{thd[1]}}%</p>

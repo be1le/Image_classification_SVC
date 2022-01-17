@@ -83,6 +83,10 @@ function cameraOn() {
 //         }
 //     });
 // }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 
 
@@ -187,16 +191,21 @@ function enemy() {
     $.ajax({
         type: 'GET',
         url: '/char_detail/search_vs',
+<<<<<<< Updated upstream
         data: form_data,
         cache: false,
         contentType: false,
         processData: false,
+=======
+        data: { vs_char_give: enemy, char_give: name },
+>>>>>>> Stashed changes
         success: function(response) {
             // window.location.href = '/char_detail/' + name
             let result = response['result']
 
             console.log(enemy, name, result)
 
+<<<<<<< Updated upstream
             //             let temp_html = `
             //                                 <div id="winning-per">
             //                                 <p>${name}</p>
@@ -214,6 +223,26 @@ function enemy() {
             //                             </div>
             //                            `
             //             $('#temp').append(temp_html)
+=======
+            let temp_html = `
+                                <div id="winning-per">
+                                <p>${name}</p>
+                                <p>${enemy} 상대 승률: ${result}</p>
+                                <p id='enemy-title'>${enemy}</p>
+                            </div>
+                            <div id="winning-box">
+                                <div id="pick-img" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/${name}.png);">
+                                </div>
+                                <div id="versus-box">
+                                    <p>VS</p>
+                                </div>
+                                <div id="enemy-img" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Full_Image/${enemy}.png);">
+                                </div>
+                            </div>
+                            `
+
+            $('#temp').html(temp_html)
+>>>>>>> Stashed changes
 
         }
     });

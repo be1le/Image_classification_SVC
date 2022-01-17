@@ -22,46 +22,6 @@ $(document).ready(function() {
 
 
 
-
-
-// 드래그앤드랍 부분 //
-
-
-// $('.dropArea')
-//     .on("dragover", dragOver)
-
-// function dragOver(e) {
-//     e.stopPropagation();
-//     e.preventDefault();
-//     if (e.type == "dragover") {
-//         $('.dorpArea p').hide();
-//     }
-// }
-
-// const dropArea = document.querySelector('.dropArea')
-// dropArea.addEventListener('dragover', (e) => {
-//     e.preventDefault()
-//     e.target.classList.add('over')
-
-// })
-// dropArea.addEventListener('dragleave', (e) => {
-//     e.target.classList.remove('over')
-
-
-// })
-// dropArea.addEventListener('drop', (e) => {
-//     e.preventDefault()
-//     e.target.classList.add('drop')
-//     let file = e.dataTransfer.files[0]
-//     let fileReader = new FileReader()
-//     fileReader.onload = (result) => {
-//         let img = "<img src='" + result.target.result + "' />"
-//         dropArea.innerHTML = img
-//     }
-//     fileReader.readAsDataURL(file)
-// })
-
-
 function posting2() {
     let file = $('#file')[0].files[0]
     let form_data = new FormData()
@@ -252,3 +212,143 @@ function enemy(value) {
 //     }
 //   ]
 // });
+
+
+$('div.dropArea')
+    .on("dragover", dragOver)
+    .on("dragleave", dragOver)
+    .on("drop", uploadFiles);
+
+function dragOver(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    if (e.type == "dragleave") {
+        $('#camera').hide();
+        $('#canvas').hide();
+        $('#boxtext').hide();
+        $('#upimg-box').hide();
+
+    }
+}
+
+function uploadFiles(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    dragOver(e);
+
+    e.dataTransfer = e.originalEvent.dataTransfer;
+    var files = e.target.files || e.dataTransfer.files;
+    if (files.length > 1) {
+        alert('하나의 이미지만 업로드해주세요.');
+        return;
+    }
+    if (files[0].type.match(/image.*/ || /video.*/)) {
+        document.getElementById("re_capture").style.display = "block"
+        document.getElementById("show_result").style.display = "block"
+        $(e.target).css({
+            "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
+            "background-position": "center",
+            "background-size": "cover",
+            "display": "absolute",
+            "max-width": "400px",
+            "width": "100%",
+
+        });
+        $('div.dropArea').css({
+            "object-fit": "cover",
+            "width": "400px",
+            "height": "300px",
+            "display": "block",
+            "align-items": "center",
+            "border": "2px solid white",
+            "border-radius": "50px",
+        })
+
+    } else {
+        $('#camera').show();
+        $('#canvas').show();
+        $('#boxtext').show();
+        $('#upimg-box').show();
+        alert('지원하는 파일이 아닙니다.');
+        return;
+    }
+
+    let nick = $('#nick').val()
+    let file = $(e.target)[0].files[0]
+    let form_data = new FormData()
+
+    form_data.append("nick_give", nick)
+    if (file) {
+        form_data.append("file_give", file)
+    }
+    $.ajax({
+        type: "POST",
+        url: "/profile/fileupload",
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            alert(response["result"])
+            var profile_sound = new Audio();
+            profile_sound.src = "../static/sounds/profile.mp3"
+            profile_sound.currentTime = 0;
+            profile_sound.volume - 1.0;
+            profile_sound.play();
+
+            window.setTimeout(function() {
+                window.location.href = '/main';
+            }, 700);
+        }
+    });
+
+}
+
+
+$(function() {
+    $("#up-load").on('change', function() {
+        readURL(this);
+    });
+});
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        // $('#camera').hide();
+        // $('#canvas').hide();
+        // $('#boxtext').hide();
+        // $('#upimg-box').hide();
+
+        document.getElementById("re_capture").style.display = "block"
+        document.getElementById("show_result").style.display = "block"
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#dropArea').attr('src', e.target.result);
+
+        }
+        reader.readAsDataURL(input.files[0]);
+        if (files.length > 1) {
+            alert('하나의 이미지만 업로드해주세요.');
+            return;
+        }
+        if (input.files[0].type.match(/image.*/ || /video.*/)) {
+            $('div.dropArea').css({
+                "object-fit": "cover",
+                "width": "300px",
+                "height": "300px",
+                "display": "block",
+                "align-items": "center",
+                "border": "2px solid white",
+                "border-radius": "50px",
+            })
+
+
+        } else {
+            $('#camera').show();
+            $('#canvas').show();
+            $('#boxtext').show();
+            $('#upimg-box').show();
+            alert('지원하는 파일이 아닙니다.');
+            return;
+        }
+    }
+}

@@ -134,6 +134,11 @@ function hide_show() {
     document.getElementById("capture").style.display = "None"
     document.getElementById("re_capture").style.display = "block"
     document.getElementById("show_result").style.display = "block"
+    var click = new Audio();
+    click.src = "../static/Camera.mp3"
+    click.currentTime = 0;
+    click.volume - 1.0;
+    click.play();
 }
 
 function all_char() {

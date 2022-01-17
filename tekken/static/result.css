@@ -55,7 +55,7 @@ body {
     margin-bottom: 9%;
 }
 
-/*              HEADER 시작              */
+/*              HEADER ì‹œìž‘              */
 
 header {
     margin: 2% 0;
@@ -87,7 +87,7 @@ header #header-box {
     margin-bottom: 3%;
 }
 
-/*      HEADER  끝      MAIN 시작      */
+/*      HEADER  ë      MAIN ì‹œìž‘      */
 
 #loading {
     display: none;
@@ -112,7 +112,6 @@ main {
 }
 
 #img-box {
-    background-image: url(../img/Face_Image/alisa.png);
     background-size: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -154,11 +153,11 @@ main {
 
 #explain-box #exp-profile {
     margin-top: 10%;
-    font-size: 17px;
+    font-size: 13px;
     font-weight: 300;
 }
 
-/*       승률 부분 시작        */
+/*       ìŠ¹ë¥  ë¶€ë¶„ ì‹œìž‘        */
 #lower-container {
     width: 70%;
     align-items: center;
@@ -215,7 +214,7 @@ main {
 }
 
 #ranking-box #rank1 {
-    background-image: url(../img/Face_Image/alisa.png);
+    
     background-size: 300px;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,7 +227,7 @@ main {
 }
 
 #ranking-box #rank2 {
-    background-image: url(../img/Face_Image/dragunov.png);
+    
     background-size: 225px;
     background-position: center;
     background-repeat: no-repeat;
@@ -241,7 +240,7 @@ main {
 }
 
 #ranking-box #rank3 {
-    background-image: url(../img/Face_Image/lili.png);
+    
     background-size: 150px;
     background-position: center;
     background-repeat: no-repeat;
@@ -296,7 +295,7 @@ main {
     transition-duration: 0.6s;
 }
 
-/*      MAIN  끝      FOOTER 시작      */
+/*      MAIN  ë      FOOTER ì‹œìž‘      */
 
 footer {
     width: 100%;
@@ -311,9 +310,9 @@ footer p {
     font-size: small;
 }
 
-/*             FOOTER  끝             */
+/*             FOOTER  ë             */
 
-/* 드래그앤드랍 */
+/* ë“œëž˜ê·¸ì•¤ë“œëž */
 /* .dropArea img {
     position: absolute;
     transform: translate(50, 50);

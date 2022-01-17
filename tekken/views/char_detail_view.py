@@ -56,6 +56,6 @@ def search():
     char = db.char.find_one({'name': char }) 
     vs = char[vs_char] 
     vs_per = "{:.2f}".format(vs) 
-
+    
 
     return jsonify({'result': vs_per})

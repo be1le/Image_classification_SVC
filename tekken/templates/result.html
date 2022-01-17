@@ -51,24 +51,24 @@
             <div id="ranking-box">
                 <div id="rank-box">
                     <div id='rank-level'>TOP1</div>
-                    <div id="rank1" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{first}}.png)">
+                    <div id="rank1" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{first[0]}}.png)">
                     </div>
-                    <p id="rank-name1" class="rank-name">{{first}}</p>
-                    <p id="rank1-per" class="per">{{first_num}}%</p>
+                    <p id="rank-name1" class="rank-name">{{first[0]}}</p>
+                    <p id="rank1-per" class="per">{{first[1]}}%</p>
                 </div>
                 <div id="rank-box">
                     <div id='rank-level'>TOP2</div>
-                    <div id="rank2" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{sec}}.png)">
+                    <div id="rank2" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{sec[0]}}.png)">
                     </div>
-                    <p id="rank-name2" class="rank-name">{{sec}}</p>
-                    <p id="rank2-per" class="per">{{sec_num}}%</p>
+                    <p id="rank-name2" class="rank-name">{{sec[0]}}</p>
+                    <p id="rank2-per" class="per">{{sec[1]}}%</p>
                 </div>
                 <div id="rank-box">
                     <div id='rank-level'>TOP3</div>
-                    <div id="rank3" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{thd}}.png);">
+                    <div id="rank3" style="background-image: url(https://tekken.s3.ap-northeast-2.amazonaws.com/Face_Images/{{thd[0]}}.png);">
                     </div>
-                    <p id="rank-name3" class="rank-name">{{thd}}</p>
-                    <p id="rank-per" class="per">{{thd_num}}%</p>
+                    <p id="rank-name3" class="rank-name">{{thd[0]}}</p>
+                    <p id="rank-per" class="per">{{thd[1]}}%</p>
                 </div>
             </div>
             <button class="home-btn" onclick="home()">홈으로 가기</button>

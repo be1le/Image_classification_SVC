@@ -31,18 +31,14 @@ def home(result):
     rank = counts.most_common(51)
 
     all_rank = {}
-    all_per = {}
-    top_len = len(top_list)
     tr = 0
     while tr < 51:
-        
         try:
-            all_rank["rank{0}".format(tr)] = rank[tr][0]
-            all_per["rank{0}".format(tr)] = "%.2f" % (rank[tr][1] * 100 / top_len)
+            all_rank["rank{0}".format(tr)] = rank[tr][0] , "%.2f" % (rank[tr][1] * 100 / all_result)
             tr = tr+1
         except:
             break
 
 
 
-    return render_template('result.html', name = name, face = face ,all_result = all_result, first=all_rank["rank0"],sec=all_rank["rank1"],thd=all_rank["rank2"],first_num=all_per["rank0"],sec_num=all_per["rank1"],thd_num=all_per["rank2"])
+    return render_template('result.html', name = name, face = face ,all_result = all_result, first=all_rank["rank0"],sec=all_rank["rank1"],thd=all_rank["rank2"])

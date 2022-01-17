@@ -162,6 +162,16 @@ header #header-box {
     align-items: baseline;
 }
 
+#warning {
+    color: white;
+    font-size: small;
+}
+
+#warning span {
+    color: rgb(255, 175, 175);
+    font-size: medium;
+}
+
 
 /*      MAIN  끝      FOOTER 시작      */
 

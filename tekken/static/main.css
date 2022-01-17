@@ -132,7 +132,7 @@ header #header-box {
     display: none;
 }
 
-.up-img {
+#up-img {
     font-size: small;
     display: flex;
     justify-content: center;
@@ -149,7 +149,7 @@ header #header-box {
     padding: -2px;
 }
 
-.up-img:hover {
+#up-img:hover {
     background-color: rgb(59, 0, 0);
     border: 1px solid rgb(126, 27, 27);
     font-weight: bold;

@@ -1,16 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify,Blueprint
-from datetime import datetime
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import tensorflow as tf
 import numpy as np
 import os
 from pymongo import MongoClient
+import certifi
 
+tk = certifi.where()
 
-client = MongoClient('mongodb+srv://test:sparta@cluster0.0pi7g.mongodb.net/Cluster0?retryWrites=true&w=majority') # 클라이언트 설정시 작성
+client = MongoClient('mongodb+srv://test:sparta@cluster0.0pi7g.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=tk) # 클라이언트 설정시 작성
 db = client.TEKKEN
 
-# 학습시킨 binary classification model 불러오기 (출력층을 sigmoid 로 설정했기에, predict 하면 아웃풋이 0~1 로 나옴)
 model = tf.keras.models.load_model('tekken/static/model/model.h5',compile=False) 
 bp = Blueprint("main", __name__, url_prefix="/", static_folder="static", template_folder="templates")
 
@@ -27,8 +27,6 @@ def home():
     
 
     return render_template('main.html', all_result = result)
-
-
 
 
 @bp.route('/fileupload', methods=['POST'])
@@ -172,7 +170,6 @@ def result():
                 result = 'Jin'
                 
 
-
         #파일을 삭제
         DeleteAllFiles('tekken/static/img/abc')
 
@@ -180,7 +177,6 @@ def result():
         all_result = list(db.compared_face_result.find({},{'_id':False}))
         resultid = len(all_result) + 1
 
-        #numpy.int64 타입은 저장이 불가해서 int 타입으로 변형
 
         doc = {'id': resultid , 'result': result }
         

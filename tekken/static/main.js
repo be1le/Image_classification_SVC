@@ -22,27 +22,27 @@ $(document).ready(function() {
 
 
 
-function posting2() {
-    let file = $('#file')[0].files[0]
-    let form_data = new FormData()
+// function posting2() {
+//     let file = $('#file')[0].files[0]
+//     let form_data = new FormData()
 
-    form_data.append("file_give", file)
+//     form_data.append("file_give", file)
 
-    $.ajax({
-        type: "POST",
-        url: "/fileupload",
-        data: form_data,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function(response) {
-            alert(response["result"])
-                // 아래처럼 하지 않아도, 백엔드(app.py)에서 바로 판별 함수를 실행한 뒤에
-                // render_template 을 해서 바로 결과 페이지로 넘어가도 됨
-            window.location.href = '/result'
-        }
-    });
-}
+//     $.ajax({
+//         type: "POST",
+//         url: "/fileupload",
+//         data: form_data,
+//         cache: false,
+//         contentType: false,
+//         processData: false,
+//         success: function(response) {
+//             alert(response["result"])
+//                 // 아래처럼 하지 않아도, 백엔드(app.py)에서 바로 판별 함수를 실행한 뒤에
+//                 // render_template 을 해서 바로 결과 페이지로 넘어가도 됨
+//             window.location.href = '/result'
+//         }
+//     });
+// }
 
 
 
@@ -242,6 +242,7 @@ function uploadFiles(e) {
         alert('하나의 이미지만 업로드해주세요.');
         return;
     }
+    console.log(files[0])
     if (files[0].type.match(/image.*/ || /video.*/)) {
         document.getElementById("re_capture").style.display = "block"
         document.getElementById("show_result").style.display = "block"
@@ -273,34 +274,25 @@ function uploadFiles(e) {
         return;
     }
 
-    let nick = $('#nick').val()
-    let file = $(e.target)[0].files[0]
+    let Image = files[0]
     let form_data = new FormData()
 
-    form_data.append("nick_give", nick)
-    if (file) {
-        form_data.append("file_give", file)
-    }
+    form_data.append("file_give", Image)
+
     $.ajax({
         type: "POST",
-        url: "/profile/fileupload",
+        url: "/fileupload",
         data: form_data,
         cache: false,
         contentType: false,
         processData: false,
         success: function(response) {
             alert(response["result"])
-            var profile_sound = new Audio();
-            profile_sound.src = "../static/sounds/profile.mp3"
-            profile_sound.currentTime = 0;
-            profile_sound.volume - 1.0;
-            profile_sound.play();
 
-            window.setTimeout(function() {
-                window.location.href = '/main';
-            }, 700);
+            window.location.href = '/result'
         }
     });
+
 
 }
 
@@ -312,43 +304,24 @@ $(function() {
 });
 
 function readURL(input) {
-    if (input.files && input.files[0]) {
-        // $('#camera').hide();
-        // $('#canvas').hide();
-        // $('#boxtext').hide();
-        // $('#upimg-box').hide();
 
-        document.getElementById("re_capture").style.display = "block"
-        document.getElementById("show_result").style.display = "block"
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            $('#dropArea').attr('src', e.target.result);
+    let Image = input.files[0]
+    let form_data = new FormData()
 
+    form_data.append("file_give", Image)
+
+    $.ajax({
+        type: "POST",
+        url: "/fileupload",
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            alert(response["result"])
+
+            window.location.href = '/result'
         }
-        reader.readAsDataURL(input.files[0]);
-        if (files.length > 1) {
-            alert('하나의 이미지만 업로드해주세요.');
-            return;
-        }
-        if (input.files[0].type.match(/image.*/ || /video.*/)) {
-            $('div.dropArea').css({
-                "object-fit": "cover",
-                "width": "300px",
-                "height": "300px",
-                "display": "block",
-                "align-items": "center",
-                "border": "2px solid white",
-                "border-radius": "50px",
-            })
+    });
 
-
-        } else {
-            $('#camera').show();
-            $('#canvas').show();
-            $('#boxtext').show();
-            $('#upimg-box').show();
-            alert('지원하는 파일이 아닙니다.');
-            return;
-        }
-    }
 }

@@ -48,9 +48,10 @@ def result():
     try:
         test_datagen = ImageDataGenerator(rescale = 1./255)
         test_dir = 'tekken/static/img'
-        tr = os.path.isfile("tekken/static/img/abc/input.jpg")
-        print(tr)
-        if tr == True:
+        image_vali_1 = os.path.isfile("tekken/static/img/abc/input.jpg")
+        image_vali_2 = os.path.isfile("tekken/static/img/abc/input.jpeg")
+        image_vali_3 = os.path.isfile("tekken/static/img/abc/input.png")
+        if image_vali_1 == True or image_vali_2 == True or image_vali_3:
             test_generator = test_datagen.flow_from_directory(
                     test_dir,
                     # target_size 는 학습할때 설정했던 사이즈와 일치해야 함

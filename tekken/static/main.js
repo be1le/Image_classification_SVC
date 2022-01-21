@@ -242,12 +242,14 @@ function uploadFiles(e) {
         alert('하나의 이미지만 업로드해주세요.');
         return;
     }
-    console.log(files[0])
-    if (files[0].type.match(/image.*/ || /video.*/)) {
+
+    let Image = files[0]
+    
+    if (Image.type.match(/image.*/ || /video.*/)) {
         document.getElementById("re_capture").style.display = "block"
         document.getElementById("show_result").style.display = "block"
         $(e.target).css({
-            "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
+            "background-image": "url(" + window.URL.createObjectURL(Image) + ")",
             "background-position": "center",
             "background-size": "cover",
             "display": "absolute",
@@ -274,7 +276,7 @@ function uploadFiles(e) {
         return;
     }
 
-    let Image = files[0]
+    
     let form_data = new FormData()
 
     form_data.append("file_give", Image)
@@ -325,3 +327,5 @@ function readURL(input) {
     });
 
 }
+
+  

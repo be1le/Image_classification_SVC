@@ -8,7 +8,7 @@ import certifi
 
 tk = certifi.where()
 
-client = MongoClient('mongodb+srv://test:sparta@cluster0.0pi7g.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=tk) # 클라이언트 설정시 작성
+client = MongoClient('', tlsCAFile=tk) # 클라이언트 설정시 작성
 db = client.TEKKEN
 
 model = tf.keras.models.load_model('tekken/static/model/model.h5',compile=False) 
